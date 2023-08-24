@@ -1,0 +1,83 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    max-width: 320px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: auto;
+}
+
+.tecla-area{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.tecla{
+    background-color: #6384eb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1/1;
+    font-size: 1.8rem;
+    font-family: 'Arial';
+    color: white;
+}
+.tecla.active{
+    animation: teclaDown .1s linear;
+}
+.error{
+    animation: error .7s linear;
+}
+
+input{
+    height: 2.5rem;
+    border: none;
+    outline: none;
+    background-color: rgb(232, 232, 232);
+    margin: 10px 0;
+    font-size: 1.5rem;
+    padding: 5px;
+}
+
+button{
+    background-color: #ee5684;
+    border: none;
+    height: 3rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+@keyframes teclaDown {
+    0%{
+        background-color: yellow;
+        transform: scale(0.8);
+    }
+    100%{
+        background-color: #6384eb;
+    }
+}
+
+@keyframes error {
+    0%{
+        transform: skewY(0deg);
+        border:1px solid red;
+    }
+    25%{
+        transform: skewY(2deg);
+    }
+    75%{
+        transform: skewY(-2deg);
+    }
+    100%{
+        transform: skewY(0deg);
+        border:1px solid red;
+    }
+
+}
